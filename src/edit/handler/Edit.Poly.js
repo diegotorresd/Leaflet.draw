@@ -85,7 +85,7 @@ L.Edit.Poly = L.Handler.extend({
 L.Edit.PolyVerticesEdit = L.Handler.extend({
 	options: {
 		icon: new L.DivIcon({
-			iconSize: new L.Point(8, 8),
+			iconSize: new L.Point(6, 6),
 			className: 'leaflet-div-icon leaflet-editing-icon'
 		}),
 		touchIcon: new L.DivIcon({
@@ -390,6 +390,11 @@ L.Edit.PolyVerticesEdit = L.Handler.extend({
 			onDragEnd;
 
 		marker.setOpacity(0.6);
+		var middleMarkerIcon = new L.DivIcon({
+			iconSize: new L.Point(4, 4),
+			className: 'leaflet-div-icon leaflet-editing-icon middle-marker'
+		})
+		marker.setIcon(middleMarkerIcon)
 
 		marker1._middleRight = marker2._middleLeft = marker;
 
